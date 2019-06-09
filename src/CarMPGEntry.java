@@ -1,5 +1,5 @@
 
-public class CarMPGEntry {
+public class CarMPGEntry implements Comparable{
 	public float mpg;
 	public int cylinders;
 	public float displacement;
@@ -9,5 +9,9 @@ public class CarMPGEntry {
 	public int modelYear;
 	public int	origin;
 	public String carName;
+	@Override
+	public int compareTo(Object o) {
+		return carName.compareTo(((CarMPGEntry)(o)).carName);
+	}
 }
 

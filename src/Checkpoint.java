@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class Checkpoint {
@@ -29,6 +30,27 @@ public class Checkpoint {
 		 * 
 		 * 5. Print only the cars with "toyota" in the name.
 		 */
+		ArrayList<CarMPGEntry> arr = readCarMPGEntryDataFromFile();
+		
+		arr.stream().forEach((e)->{
+			System.out.println(e);
+		});
+		arr.stream().forEach((e)->{
+			System.out.println(e.mpg);
+		});
+		arr.stream().sorted().forEach((e)->{
+			System.out.println(e.carName);
+		});
+		arr.stream().forEach((e)->{
+			if(e.cylinders != 8) {
+				System.out.println(e);
+			}
+		});
+		arr.stream().forEach((e)->{
+			if(e.carName.equals("toyota")) {
+				System.out.println(e);
+			}
+		});
 		
 		
 	}
